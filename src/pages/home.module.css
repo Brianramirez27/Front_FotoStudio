@@ -1,0 +1,114 @@
+.containerHome {
+    margin: auto;
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    background: linear-gradient(135deg, #004e7e, #ffffff)
+
+
+}
+
+.homeLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    width: 30%;
+    /* height: 100%;
+    background-color: yellow; */
+    overflow: hidden;
+    color: #b0d0e4;
+    /* background-color: aqua; */
+    padding-left: 50px;
+
+}
+
+
+.bienvenido {
+    width: 90%;
+    font-size: 3rem;
+    color: #b0d0e4;
+
+}
+
+.bienvenidOTwo {
+    font-size: 3rem;
+    color: white;
+    right:-10px;
+}
+.homeLeft_p_one{
+    width: 90%;
+    font-size: 1.5rem;
+    /* background-color: red; */
+    
+}
+.homeRight {
+    margin: auto;
+    width: 70%;
+    height: 95%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    padding: 12px;
+    overflow: hidden;
+    /* background-color: red; */
+}
+
+/* .homeRight img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+} */
+.homeRight div {
+    cursor: pointer;
+    transition: transform 0.5s, box-shadow 0.5s, background-color 0.5s;
+}
+
+.homeRight div:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f2f2f2; /* Cambia a un color de fondo diferente */
+}
+.homeRight div:first-child {
+    border-radius: 10px;
+    background-color: aqua;
+
+}
+
+.homeRight div:nth-child(2) {
+    border-radius: 10px;
+    background-color: yellowgreen;
+
+}
+
+.homeRight div:nth-child(3) {
+    border-radius: 10px;
+    background-color: tomato;
+}
+
+
+.homeRight div:nth-child(4) {
+    border-radius: 10px;
+    background-color: bisque;
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.homeRight div:nth-child(5) {
+    border-radius: 10px;
+background-color: brown;
+    grid-row: span 2;
+
+}
+
+.homeRight div:nth-child(6) {
+    border-radius: 10px;
+    background-color: cadetblue;
+}
+
+.homeRight div:nth-child(7) {
+    border-radius: 10px;
+    background-color: darkorchid;
+}

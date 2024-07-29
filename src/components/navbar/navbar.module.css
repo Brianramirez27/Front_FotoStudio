@@ -1,0 +1,25 @@
+.navbar{
+    width: 90%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+
+  
+ 
+}
+
+.logo{
+    width: 10%;
+    height:80%;
+    /* background-color: red; */
+  
+}
+.nameWeb{
+    /* color: rgb(11, 15, 25); */
+    font-size:large;
+    color: #00243d;
+}
+
