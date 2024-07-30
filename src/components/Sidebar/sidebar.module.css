@@ -1,0 +1,91 @@
+.containerSidebar{
+    width: 20%;
+    height: 100vh;
+    /* background: linear-gradient(135deg, #004e7e, #ffffff); */
+    /* background-color: #b0d0e4; */
+    background-color: #004e7e;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  
+
+}
+.LogoAdmin{
+    width: 100%;
+    height:5rem;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+.Logo{
+    width: 30px;
+    height: 30px;
+}
+.nameLogo{
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+.containerTools{
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    /* background-color: green; */
+    margin-block-start: 0;
+    margin-block-end: 0;
+    gap: 1rem;
+
+}
+.categoryTools{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: start;
+    color: white;
+    padding-left: 1.5rem;
+    align-items: center;
+    font-weight: bold;
+ 
+   
+}
+.Tool{
+    padding-left: 1.5rem;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    /* background-color: aqua; */
+    overflow: hidden;
+    gap: 1rem;
+    cursor: pointer;
+ 
+    
+
+}
+.Tool:hover{
+    transition: 400ms;
+    background-color: #0068a8;
+    box-shadow: 0 0 10px white;
+ 
+}
+.iconsTools{
+    width: 30px;
+    height: 30px;
+   
+}
+.textTools{
+    color: white;
+    font-size: medium;
+    
+}

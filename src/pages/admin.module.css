@@ -1,0 +1,13 @@
+.containerAdmin{
+    display: flex;
+    flex-direction: row;
+    align-items: center;;
+    
+    
+}
+.adminResource{
+    width: 100%;
+    height: 100vh;
+    /* background-color: red; */
+  
+}

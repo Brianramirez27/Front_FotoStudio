@@ -1,0 +1,59 @@
+.containerNavbarAdmin{
+    width: 100%;
+    height: 7vh;
+    /* background: linear-gradient(135deg, #004e7e, #ffffff); */
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    box-shadow: #004e7e 0px 0px 10px;
+}
+.bienvenidoAdmin{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #004e7e;
+}
+
+.containerNavbarImg{
+    width: 10%;
+    height: 100%;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+
+}
+.imgUser{
+    width: 2rem;
+    height: 70%;
+    border-radius: 30px 30px;
+    background-color: #b0d0e4;
+   
+}
+
+.btnExit{
+    width: 2rem;
+    height: 65%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 30px 30px;
+    background-color:#004e7e;
+}
+.btnExit:hover{
+    transition: 400ms;
+    background-color: #0068a8;
+
+}
+.imgExit{
+    width: 80%;
+    height: 80%;
+    cursor: pointer;
+}
