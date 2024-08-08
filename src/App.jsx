@@ -1,14 +1,16 @@
-import { useState } from 'react'
 import RoutesApp from './routes/RoutesApp.jsx'
 import styles from './app.module.css'
 
+import {AuthenticationProvider} from './context/AuthenticationContext.jsx'
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className={styles.containerApp}>
-      <RoutesApp/>    
-    </div>
+    <AuthenticationProvider>
+      <div className={styles.containerApp}>
+        <RoutesApp/>    
+      </div>
+    </AuthenticationProvider>
   )
 }
 

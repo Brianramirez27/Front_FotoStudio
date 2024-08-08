@@ -13,6 +13,8 @@ function NavbarAdmin() {
                 <button className={Styles.btnExit}>
                     <img className={Styles.imgExit} src={IconExit}/>
                 </button>
+
+                <bottom></bottom>
                 
             </div>
         </div>

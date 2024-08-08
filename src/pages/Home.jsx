@@ -1,9 +1,11 @@
-import React from "react";
+import React,{useContext} from "react";
 import Navbar from "../components/navbar/Navbar.jsx";
-import logo from "../assets/logo/LOGOFE.png";
 import styles from "./home.module.css";
+import { AuthenticationContext } from "../context/AuthenticationContext";
+import Login from "../components/login/Login.jsx";
 
 function Home() {
+  const { activeSingIn} = useContext(AuthenticationContext);
   return (
     <>
       <Navbar />
@@ -17,17 +19,20 @@ function Home() {
             Gestiona, registra y analiza toda la información de tu tienda de
             fotografía con facilidad y eficiencia.
           </p>
-         
         </section>
-        <section className={styles.homeRight}>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </section>
+        {!activeSingIn ? (
+          <section className={styles.homeRight}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </section>
+        ) : (
+          <Login />
+        )}
       </div>
     </>
   );
