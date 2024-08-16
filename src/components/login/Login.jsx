@@ -1,19 +1,29 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
+import { useNavigate } from "react-router-dom";
 import Styles from "./login.module.css";
-
-
 import { authenticateUser } from "../../services/authenticateService";
 
 const Login = () => {
+  
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [error, setError] = useState(null);
+ 
+  const navigate = useNavigate();
 
+  
   const handleSubmit =async (event) => {
+    
+
     try{
         event.preventDefault();
-        const result = await authenticateUser(Email, Password)
-        console.log(result)
+        const result = await authenticateUser(Email, Password);
+        if(result.error){
+            setError(result.error)
+            return
+        }
+        localStorage.setItem("token", result.token)
+        navigate("/admin")
        
     }catch(err){
         setError(err.message)

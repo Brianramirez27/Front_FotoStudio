@@ -6,16 +6,12 @@
     align-items: center;
     margin: auto;
     overflow: hidden;
-
-  
- 
 }
 
 .logo{
     width: 10%;
     height:80%;
     /* background-color: red; */
-  
 }
 .nameWeb{
     /* color: rgb(11, 15, 25); */

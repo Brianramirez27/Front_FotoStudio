@@ -1,3 +1,5 @@
+import { validateToken } from "../helpers/TokenHelpers";
+
 const authenticateUser = async (email, password) => {
   try {
     const response = await fetch("http://localhost:3000/authentication", {
@@ -21,5 +23,6 @@ const authenticateUser = async (email, password) => {
     throw err;
   }
 };
+
 
 export { authenticateUser };
