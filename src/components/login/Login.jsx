@@ -2,6 +2,7 @@ import React,{useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import Styles from "./login.module.css";
 import { authenticateUser } from "../../services/authenticateService";
+import {ImgLogin} from "../../assets/login/woman-scanning-fingerprint-with-futuristic-interface-smart-technology.jpg";
 
 const Login = () => {
   
@@ -35,7 +36,7 @@ const Login = () => {
     <div className={Styles.containerLogin}>
       <div className={Styles.containerImg}>
         <img
-          src="/src/assets/login/woman-scanning-fingerprint-with-futuristic-interface-smart-technology.jpg"
+          src={ImgLogin}
           alt=""
         />
       </div>
