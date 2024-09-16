@@ -1,0 +1,75 @@
+.containInventory {
+    width: 100%;
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+    gap: 1rem;
+    /* background-color: #d0d0d0; */
+
+}
+
+.containSidebar {
+    width: 18%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    gap: 0.5rem;
+    /* background-color: white; */
+
+}
+.containTable{
+    width: 78%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    
+
+    /* background-color: red; */
+}
+.ButtonSidebar {
+    width: 90%;
+    height: 3rem;
+    color: #ffffff; /* Color del texto */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease; /* Transición suave para el hover */
+  }
+  
+  /* Botón Actualizar */
+  .ButtonUpdate {
+    background-color: #007bff; /* Azul */
+  }
+  
+  .ButtonUpdate:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+  }
+  
+  /* Botón Eliminar */
+  .ButtonDelete {
+    background-color: #dc3545; /* Rojo */
+  }
+  
+  .ButtonDelete:hover {
+    background-color: #c82333; /* Rojo más oscuro */
+  }
+  
+  /* Botón Crear */
+  .ButtonCreate {
+    background-color: #28a745; /* Verde */
+  }
+  
+  .ButtonCreate:hover {
+    background-color: #218838; /* Verde más oscuro */
+  }
