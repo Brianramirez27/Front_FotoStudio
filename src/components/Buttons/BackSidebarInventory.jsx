@@ -7,6 +7,7 @@ import Styles from "./backSidebarInventory.module.css";
 
 const BackSidebarInventory = () => {
     const { setActiveButtomInventory } = useContext(AuthenticationContext);
+    
     const handleTobackInnventory = () => {
         setActiveButtomInventory(null);
     }

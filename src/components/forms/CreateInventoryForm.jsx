@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import BackSidebarInventory from "../Buttons/BackSidebarInventory";
 
 import Styles from "./createInventoryForm.module.css";
+import { useContext } from "react";
+import { AuthenticationContext } from "../../context/AuthenticationContext";
+
 
 const CreateInventoryForm = () => {
   // Estado para cada campo del formulario
@@ -12,6 +15,9 @@ const CreateInventoryForm = () => {
   const [productPrice, setProductPrice] = useState("");
   const [productCategory, setProductCategory] = useState([]);
   const [selectedCategoryId, setSelectedCategoryId] = useState();
+
+  const { setActiveButtomInventory,setNewProduct } = useContext(AuthenticationContext);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
   
@@ -38,6 +44,8 @@ const CreateInventoryForm = () => {
       const data = await result.json(); // Parsear la respuesta como JSON
       if (result.ok) {
         alert("Producto creado exitosamente");
+        setActiveButtomInventory(null);
+        setNewProduct(product);
         // Opcional: Redirigir o realizar otras acciones aquí
       } else {
         alert(`Error al crear producto: ${data.message}`);
@@ -89,7 +97,7 @@ const CreateInventoryForm = () => {
     setSelectedCategoryId(e.target.value);
   };
 
-  console.log(productCategory);
+
 
   return (
     <div className={Styles.containerCreateInventoryForm}>
@@ -100,9 +108,10 @@ const CreateInventoryForm = () => {
         <input
         className={Styles.input}
           type="number" step="0.01"
-          placeholder="Nombre del producto"
+          placeholder="Cantidad del producto"
           value={productName}
           onChange={(e) => setProductName(e.target.value)}
+          required
         />
 
         <label className={Styles.label} >Costo del producto</label>
@@ -112,6 +121,7 @@ const CreateInventoryForm = () => {
           placeholder="Costo del producto"
           value={productCost}
           onChange={(e) => setProductCost(e.target.value)}
+          required
         />
 
         <label className={Styles.label}>Precio del producto</label>
@@ -121,10 +131,11 @@ const CreateInventoryForm = () => {
           placeholder="Precio del producto"
           value={productPrice}
           onChange={(e) => setProductPrice(e.target.value)}
+          required
         />
 
         <label className={Styles.label}>Categoria del producto</label>
-        <select className={Styles.select} value={selectedCategoryId} onChange={handleCategoryChange}>
+        <select className={Styles.select} value={selectedCategoryId} onChange={handleCategoryChange} required>
           <option value="">Seleccione una categoría</option>
           {productCategory.map((category) => (
             <option

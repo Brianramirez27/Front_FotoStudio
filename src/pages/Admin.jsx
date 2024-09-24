@@ -12,7 +12,7 @@ import { AuthenticationContext } from "../context/AuthenticationContext";
 
 function Admin( ){
     
-    const { activeSection, setActiveSection } = useContext(AuthenticationContext);
+    const { activeSection,} = useContext(AuthenticationContext);
 
     return(
         <div className={Styles.containerAdmin}>
@@ -22,7 +22,6 @@ function Admin( ){
                 {
                     activeSection === 'ventas' ? <h1>ventas</h1> : activeSection === 'inventario' ?  <ContainInventory/> : <h1>Dashboard</h1>
                 }
-            
                
             </div>
         </div>

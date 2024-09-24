@@ -1,15 +1,15 @@
 .containerCreateInventoryForm {
-    position: relative;
+  position: relative;
   display: flex;
   flex-direction: column;
- align-items: center;
+  align-items: center;
   width: 95%;
   height: 100%;
-  /* background-color: blueviolet; */
-    overflow: hidden;
+  overflow: hidden;
+  z-index: 3;
 
-  
 }
+
 .h2 {
   margin-top: 4.5rem;
   font-size: 1.5rem;
@@ -17,10 +17,12 @@
   margin-bottom: 1rem;
   text-align: center;
 }
-.form{
+
+.form {
   margin-top: 1rem;
 
 }
+
 .label {
   width: 92%;
   font-size: 1rem;

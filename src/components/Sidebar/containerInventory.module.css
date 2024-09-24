@@ -1,204 +1,206 @@
 .containInventory {
-    width: 100%;
-    height: 93vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: aqua; */
-    gap: 1rem;
-    /* background-color: #d0d0d0; */
+  width: 100%;
+  height: 93vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+  gap: 1rem;
+  /* background-color: aqua; */
+  /* background-color: #d0d0d0; */
 
 }
 
 .containSidebar {
-    width: 18%;
-    height: 95%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    gap: 0.5rem;
-    /* background-color: white; */
+  width: 18%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  position: relative;
+
 
 }
-.containTable{
-    width: 78%;
-    height: 95%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    
-    background-color: red;
-    overflow-y: auto;
-    position: relative;
+
+.Tools {
+  /* background-color: #007bff; */
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
 }
+
+.inventoryTitle {
+  color: #004e7e;
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #b0d0e4;
+
+
+
+}
+
+
 
 .ButtonSidebar {
-  width: 90%;
+  width: 80%;
   height: 3rem;
-  color: #ffffff; /* Color del texto */
+  color: #ffffff;
+  /* Color del texto */
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
+  /* margin-bottom: 1rem; */
+  transition: background-color 0.3s ease;
+  /* Transición suave para el hover */
+}
+.hr{
+  width: 90%;
+  height: 1px;
+  background-color: #004e7e;
+  margin: 0;
+}
+
+/* Botón Actualizar */
+.ButtonUpdate {
+  background-color: #007bff;
+  /* Azul */
+}
+
+.ButtonUpdate:hover {
+  background-color: #0056b3;
+  /* Azul más oscuro */
+}
+
+/* Botón Eliminar */
+.ButtonDelete {
+  background-color: #dc3545;
+  /* Rojo */
+}
+
+.ButtonDelete:hover {
+  background-color: #c82333;
+  /* Rojo más oscuro */
+}
+
+/* Botón Crear */
+.ButtonCreate {
+  background-color: #28a745;
+  /* Verde */
+}
+
+.ButtonCreate:hover {
+  background-color: #218838;
+  /* Verde más oscuro */
+}
+.containTable {
+  width: 78%;
+  height: 95%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.containHome{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  gap: 5px;
+
+}
+
+.table {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.tableRow {
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tableRow:hover {
+  background-color: #f0f8ff; /* Color de fondo en hover */
+ 
+}
+
+.tableRow:nth-of-type(1) {
+  height: 40px;
+  position: sticky;
+  top: 0;
+  background-color: #e0f7fa; /* Fondo para el encabezado */
+  z-index: 1;
+}
+
+.tableRow:last-of-type {
+  position: sticky;
+  bottom: 0;
+  background-color: #fff; 
+  z-index: 1;
+}
+
+.th, .td {
+  text-align: center; 
+  padding: 10px; /* Aumentar el padding para más espacio */
+  border-bottom: 1px solid #ddd;
+}
+
+.th {
+  background-color: #004e7e; /* Gris claro */
+  color:white; /* Texto blanco */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+.td {
   transition: background-color 0.3s ease; /* Transición suave para el hover */
 }
-  /* Botón Actualizar */
-  .ButtonUpdate {
-    background-color: #007bff; /* Azul */
-  }
-  
-  .ButtonUpdate:hover {
-    background-color: #0056b3; /* Azul más oscuro */
-  }
-  
-  /* Botón Eliminar */
-  .ButtonDelete {
-    background-color: #dc3545; /* Rojo */
-  }
-  
-  .ButtonDelete:hover {
-    background-color: #c82333; /* Rojo más oscuro */
-  }
-  
-  /* Botón Crear */
-  .ButtonCreate {
-    background-color: #28a745; /* Verde */
-  }
-  
-  .ButtonCreate:hover {
-    background-color: #218838; /* Verde más oscuro */
-  }
 
+.td:hover {
+  background-color: #f7f7f7; /* Color de fondo en hover para celdas */
+}
 
+.img {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 5px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
 
-  .table {
-    width: 100%;
-    height: 100%;
-    border-collapse: collapse;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* background-color: aqua; */
-    table-layout: relative;
-    margin-top: 4.5rem;
-  }
-  .tableHead  {
-    position: -webkit-sticky; /* Para Safari */
-    position: sticky; /* Para otros navegadores */
-    top: 0; /* Fija el encabezado en la parte superior */
-    background-color: #f4f4f4; /* Asegura un buen contraste */
-    z-index: 2; /* Asegura que el encabezado quede sobre las filas */
-    
-  }
-  .tableRow{
-    position: relative;
-    margin-top: 10px;
-  }
-  
-  .th, .td {
-    padding: 4px;
-    border-bottom: 1px solid #ddd;
-  }
-  .th {
-    background-color: #f4f4f4;
-    color: #333;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 16px ;
-  }
-  .th:nth-of-type(1) {
-    width: 120px;
-    overflow: hidden;
-    background-color: #f4f4f4;
-  
-  }
-  .th:nth-of-type(2) {
-    width: 90px;
-    overflow: hidden;
-    background-color: #f4f4f4;
-  
-  }
-  .th:nth-of-type(3) {
-    width: 90px;
-    overflow: hidden;
-    background-color: #f4f4f4;
-  
-  }
+.img:hover {
+  transform: scale(1.1);
+}
 
-  .th:nth-of-type(4) {
-    width: 90px;
-    overflow: hidden;
-    background-color: #f4f4f4;
-  
-  }
-
-  .td:nth-of-type(1){
-    margin-top: 10rem;
-    font-size: x-small;
-    font-weight: bold;
-  }
-
-
-  
-  .tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .tbody{
-
-
-
-  }
-
-  .tbody tr:hover {
-    background-color: #eaf2ff;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-
-  }
-  
-  .tbody tr {
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .img {
-    max-width: 50px;
-    max-height: 50px;
-    border-radius: 5px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  
-  .img:hover {
-    transform: scale(1.1);
-  }
-  
-  .noProducts {
-    text-align: center;
-    font-size: 18px;
-    padding: 20px;
-    color: #666;
-  }
-  
-  .tableFooter {
-    background-color: #f4f4f4;
-    padding: 5px;
-    text-align: left;
-    font-size: 14px;
-    color: #333;
-    position: -webkit-sticky; /* Para Safari */
-    position: sticky; /* Para otros navegadores */
-    bottom: 0; /* Fija el pie de tabla en la parte inferior del contenedor */
-  
-    z-index: 2; /* Asegura que el pie de tabla quede sobre las filas */
-    border-top: 1px solid #ddd;
-
-  }
+.noProducts {
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  color: #666;
+}

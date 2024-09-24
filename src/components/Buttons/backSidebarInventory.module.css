@@ -1,6 +1,6 @@
 .containerBackSidebarInventory{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -23,7 +23,7 @@
     cursor: pointer;
 }
 .imgBack{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
  
 }
