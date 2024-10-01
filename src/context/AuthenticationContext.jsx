@@ -15,9 +15,10 @@ const AuthenticationProvider = ({ children }) => {
   const [selectedProductInventory, setSelectedProductInventory] = useState(null);
   const [products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState(null);
-  const [updateProduct, setUpdateProduct] = useState(null);
+  const [updateProduct, setUpdateProduct] = useState(false);
   const [deleteProduct, setDeleteProduct] = useState(null);
   const [activeButtomInventory, setActiveButtomInventory] = useState(null);
+  const [productCategorys, setProductCategorys] = useState([]);
 
   return (
     <AuthenticationContext.Provider
@@ -38,6 +39,8 @@ const AuthenticationProvider = ({ children }) => {
         setUpdateProduct,
         deleteProduct,
         setDeleteProduct,
+        productCategorys,
+        setProductCategorys
       }}
     >
       {children}

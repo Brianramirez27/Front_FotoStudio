@@ -18,9 +18,40 @@ const ContainInventory = () => {
     newProduct,
     deleteProduct,
     updateProduct,
+    setProductCategorys,
   } = useContext(AuthenticationContext);
 
-  
+   // Cargar las categorías desde el backend
+   useEffect(() => {
+    const fetchCategory = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        if (!token) {
+          console.error("Token not found");
+          return;
+        }
+
+        const result = await fetch("http://localhost:3000/inventory/category", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+          }
+        });
+
+        const data = await result.json();
+        if (data.success) {
+          setProductCategorys(data.categories);
+        } else {
+          console.error("Error fetching categories:", data.message);
+        }
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+
+    fetchCategory();
+  }, []);
 useEffect(() => {
 
   const fetchProducts = async () => {
