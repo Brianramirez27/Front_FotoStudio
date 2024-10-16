@@ -79,6 +79,7 @@ useEffect(() => {
       // Asegúrate de guardar los productos en el estado
       if (data.success) {
         setProducts(data.products); // Actualiza el estado global/local
+        console.log(data.products)
       } else {
         console.error("Error fetching products:", data.message);
       }
@@ -98,7 +99,6 @@ fetchProducts(); // Ejecutar la función al montar el componente
   };
 
   return (
-    // <h1>prueba</h1>
     <section className={Styles.containInventory}>
       <div className={Styles.containSidebar}>
         <div className={Styles.Tools}>
@@ -162,13 +162,13 @@ fetchProducts(); // Ejecutar la función al montar el componente
                 }}
               >
                 <td className={Styles.td}>{product.product_id}</td>
-                <td className={Styles.td}>{product.product_price}</td>
+                <td className={Styles.td}>{product.pructo_price}</td>
                 <td className={Styles.td}>{product.product_cost}</td>
                 <td className={Styles.td}>{product.product_amount}</td>
                 <td className={Styles.td}>{product.category_product_name}</td>
                 <td className={Styles.td}>
                   <img
-                    src={product.category_product_url_img.replace(/['"]/g, "")}
+                    src={product.category_product_Url_img}
                     alt={product.category_product_name}
                     className={Styles.img}
                   />

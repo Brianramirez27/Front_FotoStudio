@@ -19,11 +19,19 @@ const Login = () => {
     try{
         event.preventDefault();
         const result = await authenticateUser(Email, Password);
+        if(result){
+          console.log(result)
+        }
         if(result.error){
             setError(result.error)
             return
         }
+
+        console.log(result)
         localStorage.setItem("token", result.token)
+        localStorage.setItem("user", JSON.stringify(result.user))
+
+        console.log(result.token)
         navigate("/admin")
        
     }catch(err){

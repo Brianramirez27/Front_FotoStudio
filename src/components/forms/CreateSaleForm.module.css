@@ -1,0 +1,195 @@
+.containerCreateInventoryForm {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 3;
+  
+  }
+  
+  .h2 {
+    margin-top: 4.5rem;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .form {
+    margin-top: 1rem;
+  
+  }
+  
+  .label {
+    width: 92%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+
+  .labelG {
+    width: 92%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: green;
+    margin-bottom: 0.5rem;
+  }
+
+  .labelR {
+    width: 92%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 0.5rem;
+  }
+  
+  .input,
+  .select {
+    width: 99%;
+    padding: 0.45rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .input:focus,
+  .select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .button {
+    padding: 0.75rem 1rem;
+    background-color: #28a745;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 3rem;
+  }
+  
+  .button:hover {
+    background-color: #218838;
+  
+  }
+  
+  
+  
+
+.addProduct{
+    background-color: #007bff;
+    padding: 0.75rem 2rem;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10rem;
+    
+  }
+
+
+  table {
+    width: 100%;
+    /* height: 100%; */
+    min-height: 35vh;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin:3vh 0 ;
+  }
+  
+  .tableRow {
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 11px;
+    text-align: center; 
+    /* height: 2vh; */
+  }
+  
+  .tableRow:hover {
+    background-color: #f0f8ff; /* Color de fondo en hover */
+   
+  }
+  
+  .tableRow:nth-of-type(1) {
+    height: 40px !important; 
+    position: sticky;
+    top: 0;
+    background-color: #e0f7fa; /* Fondo para el encabezado */
+    z-index: 1;
+  }
+  
+  .tableRow:last-of-type {
+    position: sticky;
+    bottom: 0;
+    background-color: #fff; 
+    z-index: 1;
+  }
+  
+  .th, .td {
+    text-align: center; 
+    padding: 10px; /* Aumentar el padding para más espacio */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .th {
+    background-color: #004e7e; /* Gris claro */
+    color:white; /* Texto blanco */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 10px;
+  }
+
+
+  
+  .td {
+    transition: background-color 0.3s ease; /* Transición suave para el hover */
+  }
+  
+  .td:hover {
+    background-color: #f7f7f7; /* Color de fondo en hover para celdas */
+  }
+
+
+  .footerTable{
+    display: flex;
+    width: 100%;
+  }
+
+  .footerTableButton{
+    display:flex;;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttonSubmit {
+    padding: 0.75rem 1rem;
+    background-color: #28a745;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0.8rem 4rem;
+  }
+  
+  .buttonSubmit:hover {
+    background-color: #218838;
+  
+  }

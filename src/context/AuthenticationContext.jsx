@@ -20,6 +20,14 @@ const AuthenticationProvider = ({ children }) => {
   const [activeButtomInventory, setActiveButtomInventory] = useState(null);
   const [productCategorys, setProductCategorys] = useState([]);
 
+
+  //estados de las ventas
+  const [selectedSale, setSelectedSale] = useState(null);
+  const [sales, setSales] = useState([]);
+  const [newSale, setNewSale] = useState(null);
+  const [updateSale, setUpdateSale] = useState(false);
+  const [deleteSale, setDeleteSale] = useState(null);
+
   return (
     <AuthenticationContext.Provider
       value={{
@@ -40,7 +48,18 @@ const AuthenticationProvider = ({ children }) => {
         deleteProduct,
         setDeleteProduct,
         productCategorys,
-        setProductCategorys
+        setProductCategorys,
+        sales,
+        setSales,
+        newSale,
+        setNewSale,
+        updateSale,
+        setUpdateSale,
+        deleteSale,
+        setDeleteSale,
+        selectedSale,
+        setSelectedSale,
+
       }}
     >
       {children}

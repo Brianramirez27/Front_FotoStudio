@@ -10,9 +10,9 @@ import { AuthenticationContext } from "../../context/AuthenticationContext";
 
 const CreateInventoryForm = () => {
   // Estado para cada campo del formulario
-  const [productName, setProductName] = useState("");
-  const [productCost, setProductCost] = useState("");
-  const [productPrice, setProductPrice] = useState("");
+  const [productAmount, setProductAmount] = useState(0);
+  const [productCost, setProductCost] = useState(0);
+  const [productPrice, setProductPrice] = useState(0);
   const [productCategory, setProductCategory] = useState([]);
   const [selectedCategoryId, setSelectedCategoryId] = useState();
 
@@ -26,7 +26,7 @@ const CreateInventoryForm = () => {
     // Crear el objeto del producto con los estados individuales
     const product = {
       category_product_id: selectedCategoryId,
-      product_amount: productName,
+      product_amount: productAmount,
       product_cost: productCost,
       product_price: productPrice
     };
@@ -40,6 +40,7 @@ const CreateInventoryForm = () => {
         },
         body: JSON.stringify(product) // Convertir el objeto a JSON
       });
+
   
       const data = await result.json(); // Parsear la respuesta como JSON
       if (result.ok) {
@@ -104,20 +105,21 @@ const CreateInventoryForm = () => {
       <BackSidebarInventory />
       <h2 className={Styles.h2}>Crear producto para el inventario</h2>
       <form onSubmit={handleSubmit} className={Styles.form}>
+
         <label className={Styles.label}>Stock del producto</label>
         <input
         className={Styles.input}
-          type="number" step="0.01"
+          type="number" step="1"
           placeholder="Cantidad del producto"
-          value={productName}
-          onChange={(e) => setProductName(e.target.value)}
+          value={productAmount}
+          onChange={(e) => setProductAmount(e.target.value)}
           required
         />
 
         <label className={Styles.label} >Costo del producto</label>
         <input
         className={Styles.input}
-         type="number" step="0.01"
+         type="number" step="100"
           placeholder="Costo del producto"
           value={productCost}
           onChange={(e) => setProductCost(e.target.value)}
@@ -127,7 +129,7 @@ const CreateInventoryForm = () => {
         <label className={Styles.label}>Precio del producto</label>
         <input
         className={Styles.input}
-          type="number"  step="0.01"
+          type="number"  step="100"
           placeholder="Precio del producto"
           value={productPrice}
           onChange={(e) => setProductPrice(e.target.value)}

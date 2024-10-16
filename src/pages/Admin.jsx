@@ -5,6 +5,7 @@ import NavbarAdmin from "../components/navbar/NavbarAdmin";
 import Styles from "./admin.module.css";
 
 import ContainInventory from "../components/Sidebar/ContainInventory";
+import ContainerVentas from "../components/Sidebar/containerVentas";
 
 import { useContext } from "react";
 
@@ -20,7 +21,7 @@ function Admin( ){
             <div className={Styles.adminResource}>
                 <NavbarAdmin/>
                 {
-                    activeSection === 'ventas' ? <h1>ventas</h1> : activeSection === 'inventario' ?  <ContainInventory/> : <h1>Dashboard</h1>
+                    activeSection === 'ventas' ? <ContainerVentas /> : activeSection === 'inventario' ?  <ContainInventory/> : <h1>Dashboard</h1>
                 }
                
             </div>

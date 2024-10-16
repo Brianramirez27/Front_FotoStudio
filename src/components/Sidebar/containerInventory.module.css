@@ -12,7 +12,7 @@
 }
 
 .containSidebar {
-  width: 18%;
+  width: 30%;
   height: 95%;
   display: flex;
   flex-direction: column;
@@ -110,7 +110,7 @@
   /* Verde más oscuro */
 }
 .containTable {
-  width: 78%;
+  width: 68%;
   height: 95%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -143,6 +143,7 @@
 .tableRow {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  /* height: 2vh; */
 }
 
 .tableRow:hover {
@@ -151,7 +152,7 @@
 }
 
 .tableRow:nth-of-type(1) {
-  height: 40px;
+  height: 40px !important; 
   position: sticky;
   top: 0;
   background-color: #e0f7fa; /* Fondo para el encabezado */
@@ -205,4 +206,17 @@
   font-size: 18px;
   padding: 20px;
   color: #666;
+}
+
+
+.containerVentas{
+  width: 100%;
+  height: 93vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+  gap: 1rem;
+  /* background-color: aqua; */
+  /* background-color: #d0d0d0; */
 }

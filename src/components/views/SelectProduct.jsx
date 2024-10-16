@@ -10,7 +10,6 @@ const SelectProduct = () => {
     AuthenticationContext
   );
 
-   const [UpdatingProduct, setUpdatingProduct] = useState(false);
 
   const handleDeselectProduct = () => {
     setSelectedProductInventory(null);

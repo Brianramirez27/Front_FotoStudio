@@ -161,3 +161,63 @@
   .buttonUpdateProduct:active {
     background-color: #0033cc; /* Azul aún más oscuro al hacer clic */
   }
+
+  .table {
+    width: 100%;
+    min-height: 10vh;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 11px;
+  }
+  
+  .tableRow {
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* height: 2vh; */
+  }
+  
+  .tableRow:hover {
+    background-color: #f0f8ff; /* Color de fondo en hover */
+   
+  }
+  
+  .tableRow:nth-of-type(1) {
+    height: 40px !important; 
+    position: sticky;
+    top: 0;
+    background-color: #e0f7fa; /* Fondo para el encabezado */
+    z-index: 1;
+  }
+  
+  .tableRow:last-of-type {
+    position: sticky;
+    bottom: 0;
+    background-color: #fff; 
+    z-index: 1;
+  }
+  
+  .th, .td {
+    text-align: center; 
+    padding: 10px; /* Aumentar el padding para más espacio */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .th {
+    background-color: #004e7e; /* Gris claro */
+    color:white; /* Texto blanco */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+  
+  .td {
+    transition: background-color 0.3s ease; /* Transición suave para el hover */
+  }
+  
+  .td:hover {
+    background-color: #f7f7f7; /* Color de fondo en hover para celdas */
+  }
