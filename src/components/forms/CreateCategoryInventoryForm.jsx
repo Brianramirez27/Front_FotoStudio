@@ -17,7 +17,7 @@ const CreateCategoryInventoryForm = () => {
     e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
     const token = localStorage.getItem("token"); // Recuperar el token del localStorage
     try {
-      const result = await fetch("http://localhost:3000/inventory/category", {
+      const result = await fetch("http//backfotostudio-development.up.railway.app/inventory/category", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
