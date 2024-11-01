@@ -31,11 +31,7 @@ const ContainInventory = () => {
           return;
         }
 
-<<<<<<< HEAD
-        const result = await fetch("http:localhost:3000/inventory/category", {
-=======
         const result = await fetch("https://backfotostudio-development.up.railway.app/inventory/category", {
->>>>>>> 33d4ab9 (FIX: Dash module)
           method: "GET",
           headers: {
             "Content-Type": "application/json",
