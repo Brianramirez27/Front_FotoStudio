@@ -35,7 +35,7 @@ const ContainerVentas = () => {
                     return;
                 }
 
-                const result = await fetch("http://localhost:3000/sales", {
+                const result = await fetch("https://backfotostudio-development.up.railway.app/sales", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -45,8 +45,8 @@ const ContainerVentas = () => {
 
                 const data = await result.json();
 
-                console.log(data);
                 if (data.success) {
+                    console
                     setSales(data.sales);
                 } else {
                     console.error("Error fetching categories:", data.message);

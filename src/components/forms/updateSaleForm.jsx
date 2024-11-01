@@ -11,7 +11,7 @@ const UpdateSaleForm = () => {
         AuthenticationContext
     );
 
-    let {sale_id, details, value } = selectedSale;
+    let { sale_id, details } = selectedSale;
 
 
 
@@ -21,6 +21,7 @@ const UpdateSaleForm = () => {
 
     const [detailsUpdate, setdetailsUpdate] = useState(0);
     const [productMinus, setProductMinus] = useState([]);
+
 
 
 
@@ -37,7 +38,7 @@ const UpdateSaleForm = () => {
             setdetailsUpdate(update);
             setProductMinus([...productMinus, update]);
         } else {
-            alert("MInimo tienes que tener un producto en una compra")
+            alert("Mínimo tienes que tener un producto en una compra")
         }
 
     }
@@ -93,13 +94,22 @@ const UpdateSaleForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+
+        // Obtén el contenido del elemento
+        let totalText = document.getElementById("totalUpdate").textContent;
+
+        // Quita el símbolo de dólar y convierte el texto a número
+        let totalNumber = Number(totalText.replace('Total : $', '').replace(',', '').trim())
+
+
+
+
         const data = {
-            sale_id,
+            sale_total_price: totalNumber,
             details: detailsUpdate,
-            deleted:productMinus
+            deleted: productMinus
         }
 
-        console.log("data a envair", data);
 
         try {
             const token = localStorage.getItem("token");
@@ -109,7 +119,7 @@ const UpdateSaleForm = () => {
             }
 
             const result = await fetch(
-                `http://localhost:3000/sales/${sale_id}`,
+                `https://backfotostudio-development.up.railway.app/sales/${sale_id}`,
                 {
                     method: "PUT",
                     headers: {
@@ -193,7 +203,7 @@ const UpdateSaleForm = () => {
                         {detailsUpdate.length > 0 && detailsUpdate.length + " Productos agregados"}
                     </i>
 
-                    <h2>Total : ${detailsUpdate === 0 && details?.reduce((acc, product) => {
+                    <h2 id="totalUpdate">Total : ${detailsUpdate === 0 && details?.reduce((acc, product) => {
                         return acc + (product.sales_details_amount * product.pructo_price);
                     }, 0)}
                         {detailsUpdate.length > 0 && detailsUpdate?.reduce((acc, product) => {

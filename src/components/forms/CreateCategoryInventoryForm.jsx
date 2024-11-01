@@ -31,7 +31,6 @@ const CreateCategoryInventoryForm = () => {
 
       if (result.ok) {
         const data = await result.json();
-        console.log(data);
         alert("Categoria creada con éxito");
         // Aquí puedes limpiar los campos si lo deseas
         setCategoryName("");

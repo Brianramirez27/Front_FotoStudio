@@ -31,7 +31,11 @@ const ContainInventory = () => {
           return;
         }
 
+<<<<<<< HEAD
         const result = await fetch("http:localhost:3000/inventory/category", {
+=======
+        const result = await fetch("https://backfotostudio-development.up.railway.app/inventory/category", {
+>>>>>>> 33d4ab9 (FIX: Dash module)
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -66,7 +70,7 @@ useEffect(() => {
       }
 
       // Hacer la petición con el token en los encabezados
-      const result = await fetch("http:localhost:3000/inventory", {
+      const result = await fetch("https://backfotostudio-development.up.railway.app/inventory", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -79,7 +83,6 @@ useEffect(() => {
       // Asegúrate de guardar los productos en el estado
       if (data.success) {
         setProducts(data.products); // Actualiza el estado global/local
-        console.log(data.products)
       } else {
         console.error("Error fetching products:", data.message);
       }

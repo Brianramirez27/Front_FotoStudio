@@ -36,7 +36,7 @@ const CreateSaleForm = () => {
 
         try {
             if (product4Sale.length > 0) {
-                const result = await fetch("http://localhost:3000/sales", {
+                const result = await fetch("https://backfotostudio-development.up.railway.app/sales", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -74,7 +74,7 @@ const CreateSaleForm = () => {
                     return;
                 }
 
-                const result = await fetch("http://localhost:3000/sales/products", {
+                const result = await fetch("https://backfotostudio-development.up.railway.app/sales/products", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -98,11 +98,13 @@ const CreateSaleForm = () => {
     }, [])
 
     const handleAddProduct = () => {
+        if(amount <= aval){
         setId(id + 1);
         setProduct4Sale([...product4Sale, {
             id: id,
             idProduct: idProduct,
             name: name,
+            amountFixed:aval,
             amount: amount,
             price: price,
             value: Number(price) * Number(amount)
@@ -112,6 +114,9 @@ const CreateSaleForm = () => {
         setIdProduct("");
         setPrice(0);
         setAval(0);
+    }else{
+        alert("Cantidad no disponible")
+    }
     };
 
     const handleDeleteProduct = (id) => {
@@ -121,9 +126,12 @@ const CreateSaleForm = () => {
 
     const handlePlusProduct = (id) => {
         const newProduct4Sale = product4Sale.map((product) => {
-            if (product.id === id) {
+            if (product.id === id && Number(product.amount) < Number(product.amountFixed)) {
                 product.amount = Number(product.amount) + 1;
                 product.value = product.amount * product.price;
+            }else if(Number(product.amount) === Number(product.amountFixed)){
+              alert("No hay más unidades disponibles")
+
             }
             return product;
         })
@@ -132,9 +140,11 @@ const CreateSaleForm = () => {
 
     const handleMinusProduct = (id) => {
         const newProduct4Sale = product4Sale.map((product) => {
-            if (product.id === id && Number(product.amount) > 0) {
+            if (product.id === id && Number(product.amount) > 1) {
                 product.amount = Number(product.amount) - 1;
                 product.value = product.amount * product.price;
+            }else if(Number(product.amount) === 1){
+              alert("Debe tener minimo una unidad")
             }
             return product;
 
@@ -213,7 +223,7 @@ const CreateSaleForm = () => {
                                         <td className="">${product.price}</td>
                                         <td className="">${product.value}</td>
                                         <td className={Styles.td} onClick={() => handlePlusProduct(product.id)}>+</td>
-                                        <td className={Styles.td} onClick={() => handleMinusProduct(product.id)}>-</td>
+                           <td className={Styles.td} onClick={() => handleMinusProduct(product.id)}>-</td>      
                                         <td className={Styles.td} onClick={() => handleDeleteProduct(product.id)}>X</td>
                                     </tr>
                                 )

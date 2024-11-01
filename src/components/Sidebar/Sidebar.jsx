@@ -14,7 +14,6 @@ import { AuthenticationContext } from "../../context/AuthenticationContext";
 function Sidebar() {
 
   const {setActiveSection } = useContext(AuthenticationContext);
-  console.log("componete sidebar")
 
   return (
     <div className={Styles.containerSidebar}>

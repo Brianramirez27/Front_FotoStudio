@@ -7,14 +7,13 @@ const UpdateProductInventoryForm = () => {
   const { selectedProductInventory,updateProduct,setSelectedProductInventory,setActiveButtomInventory, setUpdateProduct, productCategorys } =
     useContext(AuthenticationContext);
 
-  console.log("producto selecionado", selectedProductInventory);
+
 
   const [productCost, setProductCost] = useState(0);
   const [productPrice, setProductPrice] = useState(0);
   const [productAmount, setProductAmount] = useState(0);
   const [fkProductCategory, setFkProductCategory] = useState(""); // Almacenar el ID de la categoría
   const [productCategoryName, setProductCategoryName] = useState(""); // Almacenar el nombre de la categoría
-  console.log(productCategorys)
 
   useEffect(() => {
     if (selectedProductInventory && selectedProductInventory.product_id) {
@@ -26,17 +25,13 @@ const UpdateProductInventoryForm = () => {
       const selectedCategory = productCategorys.find(
         (category) => category.category_product_name == selectedProductInventory.category_product_name
       );
-      console.log("categoria seleccionada", selectedCategory);
       if (selectedCategory) {
-        console.log("categoria selecionada y encontrada:", selectedCategory);
         setFkProductCategory(selectedCategory.category_product_id); // Guardar el ID de la categoría
       }
      
     }
   }, [selectedProductInventory]);
 
-  console.log("categorie name:", productCategoryName);
-  console.log("fk primero :", fkProductCategory);
 
   // Función para manejar cambios en el formulario
   const handleChange = (e) => {
@@ -82,10 +77,9 @@ const UpdateProductInventoryForm = () => {
         product_price: productPrice,
         fk_product_category_product: fkProductCategory // Enviar el ID de la categoría
       };
-      console.log("data a envair", data);
 
       const result = await fetch(
-        `http://localhost:3000/inventory/${selectedProductInventory.product_id}`,
+        `https://backfotostudio-development.up.railway.app/inventory/${selectedProductInventory.product_id}`,
         {
           method: "PUT",
           headers: {

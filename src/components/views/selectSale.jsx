@@ -20,8 +20,7 @@ const SelectedSale = () => {
         const token = localStorage.getItem("token");
 
         try {
-            const url = `http://localhost:3000/sales/${selectedSale.sale_id}`;
-            console.log(url)
+            const url = `https://backfotostudio-development.up.railway.app/sales/${selectedSale.sale_id}`;
             const result = await fetch(url, {
                 method: "DELETE",
                 headers: {
