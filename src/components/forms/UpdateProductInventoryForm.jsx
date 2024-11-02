@@ -14,6 +14,7 @@ const UpdateProductInventoryForm = () => {
   const [productAmount, setProductAmount] = useState(0);
   const [fkProductCategory, setFkProductCategory] = useState(""); // Almacenar el ID de la categoría
   const [productCategoryName, setProductCategoryName] = useState(""); // Almacenar el nombre de la categoría
+  
 
   useEffect(() => {
     if (selectedProductInventory && selectedProductInventory.product_id) {
