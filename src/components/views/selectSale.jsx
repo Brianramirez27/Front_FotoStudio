@@ -20,7 +20,7 @@ const SelectedSale = () => {
         const token = localStorage.getItem("token");
 
         try {
-            const url = `https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/sales/${selectedSale.sale_id}`;
+            const url = `https://backfotostudio-development.up.railway.app/sales/${selectedSale.sale_id}`;
             const result = await fetch(url, {
                 method: "DELETE",
                 headers: {
@@ -30,7 +30,7 @@ const SelectedSale = () => {
             })
             const data = await result.json();
             if (result.ok) {
-                alert("Producto eliminado exitosamente");
+                alert("Venta eliminada exitosamente");
                 handleDeselectSale();
                 setDeleteSale(data);
             }

@@ -34,13 +34,14 @@ const UpdateSaleForm = () => {
             const deleted = details.filter((sale) => sale.product_id == id);
             const update  = details.filter((sale) => sale.product_id != id);
 
-
+            console.log(deleted)
             setdetailsUpdate(update);
             setProductMinus(...productMinus, deleted);
         } else if (detailsUpdate != 0 && detailsUpdate.length > 1) {
             const deleted = details.filter((sale) => sale.product_id == id);
             const update  = details.filter((sale) => sale.product_id != id);
 
+            console.log(deleted)
             setdetailsUpdate(update);
             setProductMinus(...productMinus, deleted);
         } else {
@@ -126,7 +127,7 @@ const UpdateSaleForm = () => {
                 return;
             }
             const result = await fetch(
-                `https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/sales/${sale_id}`,
+                `https://backfotostudio-development.up.railway.app/sales/${sale_id}`,
                 {
                     method: "PUT",
                     headers: {

@@ -32,7 +32,7 @@ const CreateInventoryForm = () => {
     };
   
     try {
-      const result = await fetch("https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/inventory", {
+      const result = await fetch("https://backfotostudio-development.up.railway.app/inventory", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +70,7 @@ const CreateInventoryForm = () => {
         }
 
         // Hacer la petición con el token en los encabezados
-        const result = await fetch("https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/inventory/category", {
+        const result = await fetch("https://backfotostudio-development.up.railway.app/inventory/category", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

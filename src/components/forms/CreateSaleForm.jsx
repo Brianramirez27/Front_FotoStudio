@@ -5,7 +5,7 @@ import { AuthenticationContext } from "../../context/AuthenticationContext";
 const CreateSaleForm = () => {
 
 
-    const {setActiveButtomInventory,  setNewSale } = useContext(AuthenticationContext);
+    const { setActiveButtomInventory, setNewSale } = useContext(AuthenticationContext);
 
     const [id, setId] = useState(0);
     const [idProduct, setIdProduct] = useState("");
@@ -40,7 +40,7 @@ const CreateSaleForm = () => {
 
         try {
             if (product4Sale.length > 0) {
-                const result = await fetch("https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/sales", {
+                const result = await fetch("https://backfotostudio-development.up.railway.app/sales", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -54,8 +54,8 @@ const CreateSaleForm = () => {
                 // Parsear la respuesta como JSON
                 if (result.ok) {
                     alert("Venta exitosamente");
-                      setActiveButtomInventory(null);
-                      setNewSale(sale);
+                    setActiveButtomInventory(null);
+                    setNewSale(sale);
 
                     // Opcional: Redirigir o realizar otras acciones aquí
                 } else {
@@ -79,7 +79,7 @@ const CreateSaleForm = () => {
                     return;
                 }
 
-                const result = await fetch("https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/sales/products", {
+                const result = await fetch("https://backfotostudio-development.up.railway.app/sales/products", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -104,25 +104,27 @@ const CreateSaleForm = () => {
     }, [])
 
     const handleAddProduct = () => {
-        if(amount <= aval){
-        setId(id + 1);
-        setProduct4Sale([...product4Sale, {
-            id: id,
-            idProduct: idProduct,
-            name: name,
-            amountFixed:aval,
-            amount: amount,
-            price: price,
-            value: Number(price) * Number(amount)
-        }])
-        setName("Seleccione un producto")
-        setAmount(0);
-        setIdProduct("");
-        setPrice(0);
-        setAval(0);
-    }else{
-        alert("Cantidad no disponible")
-    }
+        console.log(aval)
+        console.log(amount )
+        if (aval >= Number(amount)) {
+            setId(id + 1);
+            setProduct4Sale([...product4Sale, {
+                id: id,
+                idProduct: idProduct,
+                name: name,
+                amountFixed: aval,
+                amount: amount,
+                price: price,
+                value: Number(price) * Number(amount)
+            }])
+            setName("Seleccione un producto")
+            setAmount(0);
+            setIdProduct("");
+            setPrice(0);
+            setAval(0);
+        } else {
+            alert("Cantidad no disponible")
+        }
     };
 
     const handleDeleteProduct = (id) => {
@@ -135,8 +137,8 @@ const CreateSaleForm = () => {
             if (product.id === id && Number(product.amount) < Number(product.amountFixed)) {
                 product.amount = Number(product.amount) + 1;
                 product.value = product.amount * product.price;
-            }else if(Number(product.amount) === Number(product.amountFixed)){
-              alert("No hay más unidades disponibles")
+            } else if (Number(product.amount) === Number(product.amountFixed)) {
+                alert("No hay más unidades disponibles")
 
             }
             return product;
@@ -149,8 +151,8 @@ const CreateSaleForm = () => {
             if (product.id === id && Number(product.amount) > 1) {
                 product.amount = Number(product.amount) - 1;
                 product.value = product.amount * product.price;
-            }else if(Number(product.amount) === 1){
-              alert("Debe tener minimo una unidad")
+            } else if (Number(product.amount) === 1) {
+                alert("Debe tener minimo una unidad")
             }
             return product;
 
@@ -193,7 +195,7 @@ const CreateSaleForm = () => {
                 </select>
 
 
-                {name !== "Seleccione un producto"  && <label className={aval > 0 ? Styles.labelG : Styles.labelR}>{aval > 0 ? aval + " unidades disponibles" : "No disponible"}</label>
+                {name !== "Seleccione un producto" && <label className={aval > 0 ? Styles.labelG : Styles.labelR}>{aval > 0 ? aval + " unidades disponibles" : "No disponible"}</label>
                 }
                 <br />
                 <br />
@@ -229,7 +231,7 @@ const CreateSaleForm = () => {
                                         <td className="">${product.price}</td>
                                         <td className="">${product.value}</td>
                                         <td className={Styles.td} onClick={() => handlePlusProduct(product.id)}>+</td>
-                           <td className={Styles.td} onClick={() => handleMinusProduct(product.id)}>-</td>      
+                                        <td className={Styles.td} onClick={() => handleMinusProduct(product.id)}>-</td>
                                         <td className={Styles.td} onClick={() => handleDeleteProduct(product.id)}>X</td>
                                     </tr>
                                 )

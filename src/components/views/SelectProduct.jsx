@@ -24,7 +24,7 @@ const SelectProduct = () => {
     const token = localStorage.getItem("token");
 
     try{
-      const url = `https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/inventory/${selectedProductInventory.product_id}`;
+      const url = `https://backfotostudio-development.up.railway.app/inventory/${selectedProductInventory.product_id}`;
       const result= await fetch(url, {
         method: "DELETE",
         headers: {
