@@ -52,7 +52,7 @@ const SelectProduct = () => {
           <p className={Styles.p}>{selectedProductInventory.product_id}</p>
           <p className={Styles.p}>{selectedProductInventory.category_product_name}</p>
           <p className={Styles.p}>PRECIO:   {selectedProductInventory.product_price}</p>
-          <p className={Styles.p}>COSTO:   {selectedProductInventory.product_cost}</p>
+          <p className={Styles.p}>COSTO:   {selectedProductInventory.pructo_cost}</p>
           <p className={Styles.p}>CANTIDAD:   {selectedProductInventory.product_amount}</p>
           <img className={Styles.img} src={selectedProductInventory.category_product_url_img}/>
           <button className={Styles.buttonDeselectProduct}
