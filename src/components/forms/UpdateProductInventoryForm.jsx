@@ -19,7 +19,7 @@ const UpdateProductInventoryForm = () => {
     if (selectedProductInventory && selectedProductInventory.product_id) {
       setProductAmount(selectedProductInventory.product_amount);
       setProductCost(selectedProductInventory.product_cost);
-      setProductPrice(selectedProductInventory.product_price);
+      setProductPrice(selectedProductInventory.pructo_price);
       setProductCategoryName(selectedProductInventory.category_product_name);
    
       const selectedCategory = productCategorys.find(
@@ -74,7 +74,7 @@ const UpdateProductInventoryForm = () => {
       const data = {
         product_amount: productAmount,
         product_cost: productCost,
-        product_price: productPrice,
+        pructo_price: pructo_price,
         fk_product_category_product: fkProductCategory // Enviar el ID de la categoría
       };
 
@@ -141,8 +141,8 @@ const UpdateProductInventoryForm = () => {
           className={Styles.input}
           type="number"
           name="product_price"
-          id="product_price"
-          value={productPrice}
+          id="pructo_price"
+          value={pructo_price}
           onChange={handleChange}
         />
 
