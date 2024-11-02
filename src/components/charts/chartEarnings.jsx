@@ -33,7 +33,7 @@ const ChartEarningYear = () => {
                 }
     
                 const result = await fetch(
-                    `http://localhost:3000/dash/earnings/year`,
+                    `https://backfotostudio-development.up.railway.app/dash/earnings/year`,
                     {
                         method: "GET",
                         headers: {

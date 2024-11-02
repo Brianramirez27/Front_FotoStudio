@@ -75,12 +75,12 @@ const UpdateProductInventoryForm = () => {
       const data = {
         product_amount: productAmount,
         product_cost: productCost,
-        product_price: productPrice
+        product_price: productPrice,
         fk_product_category_product: fkProductCategory // Enviar el ID de la categoría
       };
 
       const result = await fetch(
-        `https://localhost:3000/inventory/${selectedProductInventory.product_id}`,
+        `https://backfotostudio-development.up.railway.app/inventory/${selectedProductInventory.product_id}`,
         {
           method: "PUT",
           headers: {
@@ -143,7 +143,7 @@ const UpdateProductInventoryForm = () => {
           type="number"
           name="product_price"
           id="product_price"
-          value={pructo_price}
+          value={productPrice}
           onChange={handleChange}
         />
 

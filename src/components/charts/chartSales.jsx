@@ -37,7 +37,7 @@ const ChartSales = () => {
             }
 
             const result = await fetch(
-                `http://localhost:3000/dash/day`,
+                `https://backfotostudio-development.up.railway.app/dash/day`,
                 {
                     method: "GET",
                     headers: {
@@ -71,7 +71,7 @@ const ChartSales = () => {
             }
 
             const result = await fetch(
-                `http://localhost:3000/dash/month`,
+                `https://backfotostudio-development.up.railway.app/dash/month`,
                 {
                     method: "GET",
                     headers: {
@@ -105,7 +105,7 @@ const ChartSales = () => {
             }
 
             const result = await fetch(
-                `http://localhost:3000/dash/year`,
+                `https://backfotostudio-development.up.railway.app/dash/year`,
                 {
                     method: "GET",
                     headers: {

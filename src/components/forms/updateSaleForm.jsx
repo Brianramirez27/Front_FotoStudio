@@ -119,7 +119,7 @@ const UpdateSaleForm = () => {
             }
 
             const result = await fetch(
-                `http://localhost:3000/sales/${sale_id}`,
+                `https://backfotostudio-development.up.railway.app/sales/${sale_id}`,
                 {
                     method: "PUT",
                     headers: {
