@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { AuthenticationContext } from "../../context/AuthenticationContext";
 import BackSidebarInventory from "../Buttons/BackSidebarInventory";
 
@@ -31,7 +31,7 @@ const UpdateProductInventoryForm = () => {
       }
      
     }
-  }, [selectedProductInventory]);
+  }, [selectedProductInventory, productCategorys]);
 
 
   // Función para manejar cambios en el formulario
@@ -44,10 +44,10 @@ const UpdateProductInventoryForm = () => {
       case "product_cost":
         setProductCost(value);
         break;
-      case "procduct_price":
+      case "product_price":
         setProductPrice(value);
         break;
-      case "category_product_name": // Cambiar el nombre del select a "category_product_name"
+      case "category_product_name": { // Cambiar el nombre del select a "category_product_name"
         setProductCategoryName(value);
         const selectedCategory = productCategorys.find(
           (category) => category.category_product_name === value
@@ -56,6 +56,7 @@ const UpdateProductInventoryForm = () => {
           setFkProductCategory(selectedCategory.category_product_id); // Guardar el ID de la categoría
         }
         break;
+      }
       default:
         break;
     }

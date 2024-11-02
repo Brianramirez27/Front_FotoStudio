@@ -75,7 +75,7 @@ const ChartEarningYear = () => {
     };
 
     return (
-            <section ref={chartContainerEarningsRef} style={{display:"flex", justifyContent:"center", alignItems:"center",padding:"1vh 0.5vw"}}>
+            <section ref={chartContainerEarningsRef} style={{display:"flex", justifyContent:"center", alignItems:"center",padding:"0.7vh 0.5vw"}}>
                 {data && data.length > 0 && <BarChartEarning chartData={formatChartData(data)} />}
             </section>
     );

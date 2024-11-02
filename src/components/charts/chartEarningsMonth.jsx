@@ -53,12 +53,12 @@ const ChartEarningMonth = () => {
                     setMes(formatMonthYear(data.result.time));
                     setGanancias(formatCurrency(data.result.total_earnings))
                 } else {
-                    setMes(getCurrentMonthFormatted());
+                    setMes(formatMonthYear(month));
                     setGanancias(null)
                 }
             } catch (error) {
                 console.error("Error fetching earnings:", error);
-                setMes(getCurrentMonthFormatted());
+                setMes(formatMonthYear(month));
                 setGanancias(null)
             }
         }
@@ -66,20 +66,21 @@ const ChartEarningMonth = () => {
     }, [month]);
 
     return (
-        <section ref={chartContainerEarningsMonthRef} style={{display:"flex",flexDirection:"column", justifyContent:"center", alignItems:"center",padding:"1vh 0.5vw"}}>
+        <section ref={chartContainerEarningsMonthRef} style={{display:"flex",flexDirection:"column", justifyContent:"center", alignItems:"center",padding:"0.7vh 0.5vw"}}>
             <input 
                 type="month" 
                 value={month} 
-                onChange={(e) => setMonth(e.target.value)} 
+                onChange={(e) => {
+                    setMonth(e.target.value);
+                    setMes(formatMonthYear(e.target.value));
+                }} 
                 style={{width:"80%",color:"#004e7e"}}
             />
-                          <hr></hr>
-                          <div style={{color:"#004e7e"}}>
-                    <h4>Ganancias del mes de {mes}</h4>
-                    <p>${ganancias ? ganancias : 0}</p>
-                </div>
-          
-            
+            <hr></hr>
+            <div style={{color:"#004e7e"}}>
+                <h4>Ganancias del mes de {mes}</h4>
+                <p>${ganancias ? ganancias : 0}</p>
+            </div>
         </section>
     );
 }

@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 
 const ChartEarningDay = () => {
-    const formatMonthYear = (monthYear) => {
-        const [year, month] = monthYear.split('-');
-        const date = new Date(year, month - 1, 1);
-        return date.toLocaleString('es-ES', { month: 'long', year: 'numeric' });
+    const formatMonthYear = (dateString) => {
+        const date = new Date(dateString + 'T00:00:00');
+        return date.toLocaleString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
     };
 
     const formatCurrency = (value) => {
@@ -55,7 +54,7 @@ const ChartEarningDay = () => {
                     setMes(formattedDate);
                     setGanancias(formatCurrency(data.result.total_earnings));
                 } else {
-                    setMes(getCurrentDayFormatted());
+                    setMes(formatMonthYear(month));
                     setGanancias(null);
                 }
             } catch (error) {
@@ -73,7 +72,7 @@ const ChartEarningDay = () => {
     };
 
     return (
-        <section ref={chartContainerEarningsMonthRef} style={{display:"flex",flexDirection:"column", justifyContent:"center", alignItems:"center",padding:"1vh 0.5vw"}}>
+        <section ref={chartContainerEarningsMonthRef} style={{display:"flex",flexDirection:"column", justifyContent:"center", alignItems:"center",padding:"0.7vh 0.5vw"}}>
             <input 
                 type="date" 
                 value={month} 
