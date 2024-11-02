@@ -43,7 +43,7 @@ const UpdateProductInventoryForm = () => {
       case "product_cost":
         setProductCost(value);
         break;
-      case "product_price":
+      case "procduct_price":
         setProductPrice(value);
         break;
       case "category_product_name": // Cambiar el nombre del select a "category_product_name"
@@ -74,7 +74,7 @@ const UpdateProductInventoryForm = () => {
       const data = {
         product_amount: productAmount,
         product_cost: productCost,
-        pructo_price: pructo_price,
+        product_price: product_price,
         fk_product_category_product: fkProductCategory // Enviar el ID de la categoría
       };
 
@@ -141,7 +141,7 @@ const UpdateProductInventoryForm = () => {
           className={Styles.input}
           type="number"
           name="product_price"
-          id="pructo_price"
+          id="produc_price"
           value={pructo_price}
           onChange={handleChange}
         />
