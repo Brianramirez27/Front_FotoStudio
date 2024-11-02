@@ -14,12 +14,13 @@ const UpdateProductInventoryForm = () => {
   const [productAmount, setProductAmount] = useState(0);
   const [fkProductCategory, setFkProductCategory] = useState(""); // Almacenar el ID de la categoría
   const [productCategoryName, setProductCategoryName] = useState(""); // Almacenar el nombre de la categoría
+  
 
   useEffect(() => {
     if (selectedProductInventory && selectedProductInventory.product_id) {
       setProductAmount(selectedProductInventory.product_amount);
       setProductCost(selectedProductInventory.product_cost);
-      setProductPrice(selectedProductInventory.product_price);
+      setProductPrice(selectedProductInventory.pructo_price);
       setProductCategoryName(selectedProductInventory.category_product_name);
    
       const selectedCategory = productCategorys.find(
@@ -43,7 +44,7 @@ const UpdateProductInventoryForm = () => {
       case "product_cost":
         setProductCost(value);
         break;
-      case "product_price":
+      case "procduct_price":
         setProductPrice(value);
         break;
       case "category_product_name": // Cambiar el nombre del select a "category_product_name"
@@ -74,7 +75,7 @@ const UpdateProductInventoryForm = () => {
       const data = {
         product_amount: productAmount,
         product_cost: productCost,
-        product_price: productPrice,
+        product_price: productPrice
         fk_product_category_product: fkProductCategory // Enviar el ID de la categoría
       };
 
@@ -142,7 +143,7 @@ const UpdateProductInventoryForm = () => {
           type="number"
           name="product_price"
           id="product_price"
-          value={productPrice}
+          value={pructo_price}
           onChange={handleChange}
         />
 
