@@ -17,7 +17,7 @@ const CreateCategoryInventoryForm = () => {
     e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
     const token = localStorage.getItem("token"); // Recuperar el token del localStorage
     try {
-      const result = await fetch("https://backfotostudio-development.up.railway.app/inventory/category", {
+      const result = await fetch("https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/inventory/category", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

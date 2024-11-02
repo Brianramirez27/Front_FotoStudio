@@ -37,7 +37,7 @@ const ChartSales = () => {
             }
 
             const result = await fetch(
-                `https://backfotostudio-development.up.railway.app/dash/day`,
+                `https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/dash/day`,
                 {
                     method: "GET",
                     headers: {
@@ -71,7 +71,7 @@ const ChartSales = () => {
             }
 
             const result = await fetch(
-                `https://backfotostudio-development.up.railway.app/dash/month`,
+                `https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/dash/month`,
                 {
                     method: "GET",
                     headers: {
@@ -105,7 +105,7 @@ const ChartSales = () => {
             }
 
             const result = await fetch(
-                `https://backfotostudio-development.up.railway.app/dash/year`,
+                `https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/dash/year`,
                 {
                     method: "GET",
                     headers: {

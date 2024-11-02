@@ -30,7 +30,7 @@ const ChartBestSeller = () => {
                 console.error("Token no encontrado");
                 return;
             }
-            const response = await fetch(`https://backfotostudio-development.up.railway.app/dash/item/${startDate}/${endDate}`, {
+            const response = await fetch(`https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f//dash/item/${startDate}/${endDate}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -60,7 +60,7 @@ const ChartBestSeller = () => {
                     console.error("Token no encontrado");
                     return;
                 }
-                const response = await fetch(`https://backfotostudio-development.up.railway.app/dash/item/${startDate}/${endDate}`, {
+                const response = await fetch(`https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/dash/item/${startDate}/${endDate}`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",

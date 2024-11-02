@@ -24,7 +24,7 @@ const SelectProduct = () => {
     const token = localStorage.getItem("token");
 
     try{
-      const url = `https://backfotostudio-development.up.railway.app/inventory/${selectedProductInventory.product_id}`;
+      const url = `https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/inventory/${selectedProductInventory.product_id}`;
       const result= await fetch(url, {
         method: "DELETE",
         headers: {
@@ -51,8 +51,8 @@ const SelectProduct = () => {
           <h1 className={Styles.h1} >Producto selecionado</h1>
           <p className={Styles.p}>{selectedProductInventory.product_id}</p>
           <p className={Styles.p}>{selectedProductInventory.category_product_name}</p>
-          <p className={Styles.p}>PRECIO:   {selectedProductInventory.product_price}</p>
-          <p className={Styles.p}>COSTO:   {selectedProductInventory.pructo_cost}</p>
+          <p className={Styles.p}>PRECIO:   ${selectedProductInventory.pructo_price}</p>
+          <p className={Styles.p}>COSTO:   ${selectedProductInventory.product_cost}</p>
           <p className={Styles.p}>CANTIDAD:   {selectedProductInventory.product_amount}</p>
           <img className={Styles.img} src={selectedProductInventory.category_product_url_img}/>
           <button className={Styles.buttonDeselectProduct}

@@ -21,6 +21,8 @@ const CreateSaleForm = () => {
         const token = localStorage.getItem("token");
         const user = localStorage.getItem("user");
 
+        console.log(user)
+
 
 
 
@@ -33,10 +35,12 @@ const CreateSaleForm = () => {
             details: product4Sale
         };
 
+        console.log(sale)
+
 
         try {
             if (product4Sale.length > 0) {
-                const result = await fetch("https://backfotostudio-development.up.railway.app/sales", {
+                const result = await fetch("https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/sales", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -52,6 +56,7 @@ const CreateSaleForm = () => {
                     alert("Venta exitosamente");
                       setActiveButtomInventory(null);
                       setNewSale(sale);
+
                     // Opcional: Redirigir o realizar otras acciones aquí
                 } else {
                     alert(`Error al crear venta: ${data.message}`);
@@ -74,7 +79,7 @@ const CreateSaleForm = () => {
                     return;
                 }
 
-                const result = await fetch("https://backfotostudio-development.up.railway.app/sales/products", {
+                const result = await fetch("https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/sales/products", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -83,9 +88,10 @@ const CreateSaleForm = () => {
                 });
 
                 const data = await result.json();
-                console.table(data.products);
+
                 if (data.success) {
                     setProductCategory(data.products)
+                    console.log(data.products)
                 } else {
                     console.error("Error fetching categories:", data.message);
                 }

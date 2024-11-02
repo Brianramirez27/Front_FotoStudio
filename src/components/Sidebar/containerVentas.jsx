@@ -35,7 +35,7 @@ const ContainerVentas = () => {
                     return;
                 }
 
-                const result = await fetch("https://backfotostudio-development.up.railway.app/sales", {
+                const result = await fetch("https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/sales", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -46,7 +46,6 @@ const ContainerVentas = () => {
                 const data = await result.json();
 
                 if (data.success) {
-                    console
                     setSales(data.sales);
                 } else {
                     console.error("Error fetching categories:", data.message);
@@ -110,6 +109,7 @@ const ContainerVentas = () => {
                                 key={sale.sale_id}
                                 className={Styles.tableRow}
                                 onClick={() => {
+                                    
                                       handleSelectSale(sale);
                                 }}
                             >

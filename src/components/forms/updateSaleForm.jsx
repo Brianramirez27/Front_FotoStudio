@@ -29,14 +29,20 @@ const UpdateSaleForm = () => {
 
     const handleDeleteProduct = (id) => {
 
+
         if (detailsUpdate == 0) {
-            const update = details.filter((sale) => sale.product_id != id);
+            const deleted = details.filter((sale) => sale.product_id == id);
+            const update  = details.filter((sale) => sale.product_id != id);
+
+
             setdetailsUpdate(update);
-            setProductMinus([...productMinus, update]);
+            setProductMinus(...productMinus, deleted);
         } else if (detailsUpdate != 0 && detailsUpdate.length > 1) {
-            const update = detailsUpdate.filter((sale) => sale.product_id != id);
+            const deleted = details.filter((sale) => sale.product_id == id);
+            const update  = details.filter((sale) => sale.product_id != id);
+
             setdetailsUpdate(update);
-            setProductMinus([...productMinus, update]);
+            setProductMinus(...productMinus, deleted);
         } else {
             alert("Mínimo tienes que tener un producto en una compra")
         }
@@ -77,6 +83,7 @@ const UpdateSaleForm = () => {
                 }
                 return product;
             })
+
             setdetailsUpdate(update);
 
         } else {
@@ -111,15 +118,15 @@ const UpdateSaleForm = () => {
         }
 
 
+
         try {
             const token = localStorage.getItem("token");
             if (!token) {
                 console.error("Token not found");
                 return;
             }
-
             const result = await fetch(
-                `https://backfotostudio-development.up.railway.app/sales/${sale_id}`,
+                `https://backfotostudio-development.up.railway.app/sales/6c739143-1aa5-4fc4-946f-99fb35814c0f/sales/${sale_id}`,
                 {
                     method: "PUT",
                     headers: {
