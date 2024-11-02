@@ -74,7 +74,7 @@ const UpdateProductInventoryForm = () => {
       const data = {
         product_amount: productAmount,
         product_cost: productCost,
-        product_price: product_price,
+        product_price: productPrice
         fk_product_category_product: fkProductCategory // Enviar el ID de la categoría
       };
 
@@ -141,7 +141,7 @@ const UpdateProductInventoryForm = () => {
           className={Styles.input}
           type="number"
           name="product_price"
-          id="produc_price"
+          id="product_price"
           value={pructo_price}
           onChange={handleChange}
         />
