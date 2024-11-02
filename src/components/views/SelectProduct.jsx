@@ -24,7 +24,7 @@ const SelectProduct = () => {
     const token = localStorage.getItem("token");
 
     try{
-      const url = `https://backfotostudio-development.up.railway.app/inventory/${selectedProductInventory.product_id}`;
+      const url = `http://localhost:3000/inventory/${selectedProductInventory.product_id}`;
       const result= await fetch(url, {
         method: "DELETE",
         headers: {

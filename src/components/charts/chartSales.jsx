@@ -37,7 +37,7 @@ const ChartSales = () => {
             }
 
             const result = await fetch(
-                `https://backfotostudio-development.up.railway.app/dash/day`,
+                `http://localhost:3000/dash/day`,
                 {
                     method: "GET",
                     headers: {
@@ -55,7 +55,7 @@ const ChartSales = () => {
                     time: `${sale.year}-${sale.month}-${sale.day}`
                 }));
                 setData(formattedData);
-                setSelected(1);
+                setSelected(3);
             }
         } catch (error) {
             console.error("Error fetching sales:", error);
@@ -71,7 +71,7 @@ const ChartSales = () => {
             }
 
             const result = await fetch(
-                `https://backfotostudio-development.up.railway.app/dash/month`,
+                `http://localhost:3000/dash/month`,
                 {
                     method: "GET",
                     headers: {
@@ -105,7 +105,7 @@ const ChartSales = () => {
             }
 
             const result = await fetch(
-                `https://backfotostudio-development.up.railway.app/dash/year`,
+                `http://localhost:3000/dash/year`,
                 {
                     method: "GET",
                     headers: {

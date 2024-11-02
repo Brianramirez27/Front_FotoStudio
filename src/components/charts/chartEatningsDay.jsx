@@ -37,7 +37,7 @@ const ChartEarningDay = () => {
                 }
     
                 const result = await fetch(
-                    `https://backfotostudio-development.up.railway.app/dash/earnings/day/${month}`,
+                    `http://localhost:3000/dash/earnings/day/${month}`,
                     {
                         method: "GET",
                         headers: {

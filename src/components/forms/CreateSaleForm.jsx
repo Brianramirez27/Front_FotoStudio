@@ -36,7 +36,7 @@ const CreateSaleForm = () => {
 
         try {
             if (product4Sale.length > 0) {
-                const result = await fetch("https://backfotostudio-development.up.railway.app/sales", {
+                const result = await fetch("http://localhost:3000/sales", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -74,7 +74,7 @@ const CreateSaleForm = () => {
                     return;
                 }
 
-                const result = await fetch("https://backfotostudio-development.up.railway.app/sales/products", {
+                const result = await fetch("http://localhost:3000/sales/products", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",

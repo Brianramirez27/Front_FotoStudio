@@ -4,7 +4,7 @@ import { validateToken } from "../helpers/TokenHelpers";
 
 const authenticateUser = async (email, password) => {
   try {
-    const url="https://backfotostudio-development.up.railway.app/authentication";
+    const url="http://localhost:3000/authentication";
     // const url2="http://localhost:3000/authentication";
     const response = await fetch(url, {
       method: "POST",

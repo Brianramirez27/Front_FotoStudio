@@ -79,7 +79,7 @@ const UpdateProductInventoryForm = () => {
       };
 
       const result = await fetch(
-        `https://backfotostudio-development.up.railway.app/inventory/${selectedProductInventory.product_id}`,
+        `https://localhost:3000/inventory/${selectedProductInventory.product_id}`,
         {
           method: "PUT",
           headers: {

@@ -31,7 +31,7 @@ const ContainInventory = () => {
           return;
         }
 
-        const result = await fetch("https://backfotostudio-development.up.railway.app/inventory/category", {
+        const result = await fetch("http://localhost:3000/inventory/category", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -66,7 +66,7 @@ useEffect(() => {
       }
 
       // Hacer la petición con el token en los encabezados
-      const result = await fetch("https://backfotostudio-development.up.railway.app/inventory", {
+      const result = await fetch("http://localhost:3000/inventory", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
